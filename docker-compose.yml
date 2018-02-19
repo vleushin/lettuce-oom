@@ -1,0 +1,9 @@
+version: '3'
+services:
+  redis-cluster:
+    ports:
+      - 7000:6379
+    image: redis:alpine
+    command: redis-server --cluster-enabled yes
+    volumes:
+      - ./docker/redis-cluster/nodes.conf:/data/nodes.conf
